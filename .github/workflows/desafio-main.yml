@@ -5,6 +5,9 @@ on:
       - 'main'
     paths:
       - 'back-end/**'
+    pull_request:
+     paths:
+      - 'back-end/**'
   
 jobs:
   build:
