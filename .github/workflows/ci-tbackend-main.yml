@@ -5,6 +5,10 @@ on:
     - 'main'
     paths: 
     - 'back-end/**'
+   pull_request:
+      paths:
+         - 'back-end/**'
+   workflow_call:
 jobs:
    build:
      runs-on: ubuntu-latest
