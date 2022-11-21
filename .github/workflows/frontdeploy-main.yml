@@ -27,7 +27,7 @@ jobs:
         
         
       - name: Deploy 
-        working-directory: front-end/ 
+        working-directory: front-end/dist/sgcmapp
         run: railway up --detach --service sgcm-adegilson-front
         env:
           RAILWAY_TOKEN: ${{ secrets.DEPLOY }}
