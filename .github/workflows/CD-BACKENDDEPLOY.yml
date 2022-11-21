@@ -15,13 +15,13 @@ jobs:
     name: Deploy Railway 
     steps: 
       - uses: actions/checkout@v3 
-      - uses: actions/stup-node@v3
+      - uses: actions/setup-node@v3
         with: 
           node-version: 16 
       - name: Instalação do cliente Railway 
         run: npm install -g @railway/cli 
       - name: Deploy 
         working-directory: back-end/ 
-        run: railway up --detach --service sgcm-adegilson
+        run: railway up --detach --service sgcm-Adegilson
         env:
-          RAILWAY_TOKEN: ${{ secrets.PRIMEIRO_DEPLOY}}
+          RAILWAY_TOKEN: ${{ secrets.FRONT_DEPLOY }}
