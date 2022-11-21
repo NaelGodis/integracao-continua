@@ -1,4 +1,4 @@
-name: CD Back-End
+name: CD front-end
 
 on: 
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
       - name: Instalação do cliente Railway 
         run: npm install -g @railway/cli 
       - name: Deploy 
-        working-directory: back-end/ 
+        working-directory: front-end/ 
         run: railway up --detach --service sgcm
         env:
           RAILWAY_TOKEN: ${{ secrets.FRONT_DEPLOY}}
