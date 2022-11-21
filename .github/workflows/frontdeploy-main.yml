@@ -28,6 +28,6 @@ jobs:
         
       - name: Deploy 
         working-directory: front-end/ 
-        run: railway up --detach --service sgcm-julianaAbreu-front
+        run: railway up --detach --service sgcm-adegilson-front
         env:
-          RAILWAY_TOKEN: ${{ secrets.TOKENJU}}
+          RAILWAY_TOKEN: ${{ secrets.DEPLOY }}
