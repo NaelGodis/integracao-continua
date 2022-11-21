@@ -1,4 +1,17 @@
-  runs-on: ubuntu-latest 
+name: CD Back-End
+
+on: 
+  workflow_dispatch:
+
+jobs: 
+
+  ci:
+    name: CI deploy 
+    uses: ./.github/workflows/frontdeploy-main.yml 
+
+  deploy: 
+    needs: ci 
+    runs-on: ubuntu-latest 
     name: Deploy Railway 
     steps: 
       - uses: actions/checkout@v3 
@@ -11,4 +24,4 @@
         working-directory: back-end/ 
         run: railway up --detach --service sgcm
         env:
-          RAILWAY_TOKEN: ${{ secrets.PRIMEIRO_DEPLOY}}
+          RAILWAY_TOKEN: ${{ secrets.FRONT_DEPLOY}}
