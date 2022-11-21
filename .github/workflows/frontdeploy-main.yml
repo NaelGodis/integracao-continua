@@ -19,9 +19,20 @@ jobs:
         with: 
           node-version: 16 
       - name: Instalação do cliente Railway 
-        run: npm install -g @railway/cli 
+        run: npm install -g @railway/cli
+      - name: instalando npm 
+        working-directory: front-end/ 
+        run: npm install 
+      - name: teste
+        working-directory: front-end/ 
+        run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - name: compilar
+        working-directory: front-end/ 
+        run: npm run build --prod
+        
+        
       - name: Deploy 
         working-directory: front-end/ 
         run: railway up --detach --service sgcm
         env:
-          RAILWAY_TOKEN: ${{ secrets.FRONT_DEPLOY}}
+          RAILWAY_TOKEN: ${{ secrets.TOKENJU}}
