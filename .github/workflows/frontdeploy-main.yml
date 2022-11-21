@@ -5,12 +5,7 @@ on:
 
 jobs: 
 
-  ci:
-    name: CI deploy 
-    uses: ./.github/workflows/frontdeploy-main.yml 
-
-  deploy: 
-    needs: ci 
+  deploy:
     runs-on: ubuntu-latest 
     name: Deploy Railway 
     steps: 
